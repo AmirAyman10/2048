@@ -201,6 +201,45 @@ document.addEventListener('DOMContentLoaded', () => {
         moveDown()
         generate()
     }
+    
+// Touch event variables
+let startX, startY, endX, endY;
+
+document.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+});
+
+document.addEventListener('touchend', (e) => {
+    endX = e.changedTouches[0].clientX;
+    endY = e.changedTouches[0].clientY;
+    handleSwipe();
+});
+
+// Function to determine swipe direction
+function handleSwipe() {
+    let deltaX = endX - startX;
+    let deltaY = endY - startY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        // Horizontal Swipe
+        if (deltaX > 50) {
+            keyRight(); // Swipe Right
+        } else if (deltaX < -50) {
+            keyLeft(); // Swipe Left
+        }
+    } else {
+        // Vertical Swipe
+        if (deltaY > 50) {
+            keyDown(); // Swipe Down
+        } else if (deltaY < -50) {
+            keyUp(); // Swipe Up
+        }
+    }
+}
+
+
+    
 
     //Check for number 2048 in squares to win 
     function checkWin() {
