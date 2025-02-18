@@ -238,7 +238,28 @@ function handleSwipe() {
     }
 }
 
+    // prvent swipe down refresh on mobile 
+    let touchStartY = 0;
 
+    window.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartY = e.touches[0].clientY;
+      },
+      { passive: false }
+    );
+
+    window.addEventListener(
+      "touchmove",
+      (e) => {
+        let touchEndY = e.touches[0].clientY;
+
+        if (touchEndY > touchStartY && window.scrollY === 0) {
+          e.preventDefault(); // Prevent the refresh
+        }
+      },
+      { passive: false }
+    );
     
 
     //Check for number 2048 in squares to win 
