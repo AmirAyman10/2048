@@ -6,10 +6,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     margin: 0;
+    min-height: 100vh;
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 8vw;
     color: #776E65;
     line-height: 0.7;
     margin: 20px 0 10px;
@@ -17,7 +18,7 @@ h1 {
 
 .container {
     width: 90%;
-    max-width: 400px;
+    max-width: 500px;
     margin-top: 10px;
 }
 
@@ -31,8 +32,10 @@ h1 {
 .grid {
     display: flex;
     flex-wrap: wrap;
-    width: 320px;
-    height: 320px;
+    width: 90vw;
+    max-width: 400px;
+    height: 90vw;
+    max-height: 400px;
     background-color: #BBADA0;
     border: 6px solid #BBADA0;
     border-radius: 6px;
@@ -40,23 +43,25 @@ h1 {
 }
 
 .grid div {
-    width: 70px;
-    height: 70px;
-    margin: 5px;
+    width: 22%;
+    height: 22%;
+    margin: 1.5%;
     border-radius: 3px;
     background-color: #EEE4DA;
     color: #AFA192;
     text-align: center;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 6vw;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .score-container {
-    width: 80px;
-    height: 50px;
+    width: 20vw;
+    max-width: 100px;
+    height: 10vw;
+    max-height: 60px;
     text-align: center;
     border-radius: 3px;
     background-color: #8F7a66;
@@ -67,11 +72,11 @@ h1 {
 }
 
 .score-title {
-    font-size: 14px;
+    font-size: 3vw;
 }
 
 #score {
-    font-size: 24px;
+    font-size: 5vw;
 }
 
 p,
@@ -83,54 +88,53 @@ h2 {
     background-color: #8F7a66;
     color: #FFF;
     border-radius: 3px;
-    height: 35px;
+    height: 8vw;
+    max-height: 40px;
     font-weight: bold;
-    width: 120px;
+    width: 30vw;
+    max-width: 150px;
     margin-top: 10px;
     display: inline-block;
     text-align: center;
-    font-size: 14px;
+    font-size: 3vw;
 }
 
 /* Mobile Screens */
 @media (max-width: 500px) {
-    h1 {
-        font-size: 40px;
+    body {
+        justify-content: flex-start;
+        padding-top: 20px;
     }
 
-    .container {
-        width: 95%;
+    h1 {
+        font-size: 10vw;
     }
 
     .grid {
-        width: 280px;
-        height: 280px;
-        border-width: 5px;
+        width: 90vw;
+        height: 90vw;
     }
 
     .grid div {
-        font-size: 6vw;
-        width: 22%;
-        height: 22%;
-        margin: 1%;
+        font-size: 8vw;
     }
 
     .score-container {
-        width: 70px;
-        height: 50px;
+        width: 25vw;
+        height: 12vw;
     }
 
     .score-title {
-        font-size: 12px;
+        font-size: 4vw;
     }
 
     #score {
-        font-size: 20px;
+        font-size: 6vw;
     }
 
     .btn {
-        font-size: 12px;
-        height: 30px;
+        font-size: 4vw;
+        height: 10vw;
     }
 }
 
@@ -141,37 +145,34 @@ h2 {
     }
 
     .grid {
-        width: 300px;
-        height: 300px;
+        width: 70vw;
+        height: 70vw;
     }
 
     .grid div {
-        font-size: 5vw;
-        width: 23%;
-        height: 23%;
-        margin: 2%;
+        font-size: 6vw;
     }
 
     .btn {
-        font-size: 14px;
-        height: 35px;
+        font-size: 3vw;
+        height: 8vw;
     }
 }
 
 /* Laptop Screens */
 @media (min-width: 1024px) {
     .container {
-        max-width: 420px;
+        max-width: 500px;
     }
 
     .grid {
-        width: 320px;
-        height: 320px;
+        width: 400px;
+        height: 400px;
     }
 
     .grid div {
-        width: 70px;
-        height: 70px;
+        width: 90px;
+        height: 90px;
         font-size: 40px;
         margin: 5px;
     }
@@ -181,13 +182,21 @@ h2 {
     }
 
     .score-container {
-        width: 80px;
-        height: 50px;
+        width: 100px;
+        height: 60px;
+    }
+
+    .score-title {
+        font-size: 14px;
+    }
+
+    #score {
+        font-size: 24px;
     }
 
     .btn {
-        width: 120px;
-        font-size: 14px;
-        height: 35px;
+        width: 150px;
+        font-size: 16px;
+        height: 40px;
     }
 }
